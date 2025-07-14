@@ -11,8 +11,9 @@ const TrendingGames = () => {
   const theme = useSelector((state) => state.theme.mode)
 
   useEffect(() => {
-    dispatch(fetchGames())
-  }, [dispatch])
+    console.log("useEffect for TrendingGames ran");
+    dispatch(fetchGames());
+  }, [dispatch]); 
 
   const navigate = useNavigate();
 
