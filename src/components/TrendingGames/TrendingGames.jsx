@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const TrendingGames = () => {
   const dispatch = useDispatch()
-  const { data: games, loading, error } = useSelector((state) => state.games)
+  const { data: games=[], loading, error } = useSelector((state) => state.games)
   const theme = useSelector((state) => state.theme.mode)
 
   useEffect(() => {

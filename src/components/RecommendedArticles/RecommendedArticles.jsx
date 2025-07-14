@@ -86,7 +86,7 @@ const RecommendedArticles = () => {
                                       </h1>
                                       <p className='text-sm text-white/70'>
                                       {descriptions[articles[largeIndex].slug]
-                                        ? descriptions[articles[largeIndex].slug].split(' ').slice(0, 25).join(' ') + '...'
+                                        ? descriptions[articles[largeIndex].slug].split(' ').slice(0, 45).join(' ') + '...'
                                         : 'Loading description...'}
                                     </p>
 
