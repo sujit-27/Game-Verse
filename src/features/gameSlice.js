@@ -4,10 +4,12 @@ import axios from "axios"
 const apiKey = import.meta.env.VITE_RAWG_API_KEY;
 
 export const fetchGames = createAsyncThunk("games/fetchGames", async () => {
-    const randomPage = Math.floor(Math.random() * 100) + 1
-    const res = await axios.get(`/api/games?key=${apiKey}&page_size=10&page=${randomPage}`)
-    return res.data.results
-})
+  const apiKey = import.meta.env.VITE_RAWG_API_KEY;
+  const randomPage = Math.floor(Math.random() * 100) + 1;
+  const res = await axios.get(`https://api.rawg.io/api/games?key=${apiKey}&page_size=10&page=${randomPage}`);
+  return res.data.results;
+});
+
 
 const gamesSlice = createSlice({
   name: "games",
