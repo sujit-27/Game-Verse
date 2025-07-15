@@ -11,7 +11,7 @@ export const fetchNewGamesByPage = createAsyncThunk("newGames/fetch", async (pag
     .split("T")[0];
 
   const res = await axios.get(
-    `https://api.rawg.io/api/games?key=${apiKey}&dates=${thirtyDaysAgo},${today}&page=${page}&ordering=-released&page_size=20`
+    `/api/games?key=${apiKey}&dates=${thirtyDaysAgo},${today}&page=${page}&ordering=-released&page_size=20`
   );
 
   return res.data.results;

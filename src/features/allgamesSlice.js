@@ -7,7 +7,7 @@ const apiKey = import.meta.env.VITE_RAWG_API_KEY;
 export const fetchTrendingGamesByPage = createAsyncThunk(
   "games/fetchNewGamesByPage",
   async (page) => {
-    const response = await fetch(`https://api.rawg.io/api/games?ordering=-added&page_size=20&page=${page}&key=${apiKey}`);
+    const response = await fetch(`/api/games?ordering=-added&page_size=20&page=${page}&key=${apiKey}`);
     const data = await response.json();
     return data.results;
   }
