@@ -2,9 +2,11 @@ import { useSelector } from "react-redux";
 import copyrightSign from "../../assets/icons/copyright-sign.svg";
 import {footerLinks, socialMedia } from "../../assets/icons/index.js";
 import  footerLogo  from "../../assets/Logo2.png";
+import { Link,useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const theme = useSelector((state) => state.theme.mode);
+  const navigate =useNavigate();
 
   const isDark = theme === "dark";
   const bgColor = isDark ? "bg-[#0e0e3d]" : "bg-[#2f2fac4c]";
@@ -52,7 +54,7 @@ const Footer = () => {
                     key={link.name}
                     className={`mb-2 cursor-pointer hover:underline ${mutedText}`}
                   >
-                    <a href={link.link}>{link.name}</a>
+                    <Link to={link.link}>{link.name}</Link>
                   </li>
                 ))}
               </ul>
